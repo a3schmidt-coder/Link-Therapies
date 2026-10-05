@@ -1,0 +1,393 @@
+:root {
+  --ink: #173f3d;
+  --body: #405653;
+  --teal: #25847d;
+  --teal-dark: #176c67;
+  --mint: #e5f2ec;
+  --paper: #f7f8f3;
+  --white: #fff;
+  --coral: #ed795f;
+  --line: #dce6df;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "DM Sans", "Trebuchet MS", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+
+.site-header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  border-bottom: 1px solid rgba(23, 63, 61, 0.1);
+  background: rgba(247, 248, 243, 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.header-inner {
+  width: min(1200px, calc(100% - 64px));
+  min-height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand img {
+  width: 174px;
+  height: auto;
+}
+
+.back-home {
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.about-main {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 64px 0 96px;
+}
+
+.page-heading {
+  margin-bottom: 44px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 50px;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: 31px;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.page-heading > p:last-child {
+  max-width: 680px;
+  margin: 0;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: start;
+  gap: 58px;
+}
+
+.about-sidebar {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+  padding-left: 17px;
+  border-left: 1px solid var(--line);
+}
+
+.about-sidebar h2 {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-sidebar nav {
+  display: grid;
+  gap: 3px;
+}
+
+.about-sidebar a {
+  display: block;
+  padding: 8px 10px;
+  border-left: 2px solid transparent;
+  color: var(--body);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.about-sidebar a:hover,
+.about-sidebar a[aria-current="page"] {
+  border-left-color: var(--teal);
+  background: var(--mint);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.page-content {
+  min-width: 0;
+}
+
+.page-content > p {
+  max-width: 760px;
+}
+
+.mission-copy p {
+  max-width: 760px;
+  margin: 0 0 22px;
+}
+
+.mission-gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.mission-gallery img {
+  width: min(100%, 720px);
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.provider-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0;
+  margin: 28px 0;
+  list-style: none;
+}
+
+.provider-logos li {
+  min-height: 78px;
+  display: grid;
+  place-items: center;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.provider-logos img {
+  width: 100%;
+  height: 54px;
+  object-fit: contain;
+}
+
+.team-roster {
+  display: grid;
+  gap: 0;
+}
+
+.person-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 48px;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+
+.person-row.is-reversed .portrait-frame {
+  order: 2;
+  justify-self: end;
+}
+
+.person-row.is-reversed .person-copy {
+  order: 1;
+}
+
+.portrait-frame {
+  width: min(100%, 300px);
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--mint);
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portrait-frame img.is-placeholder {
+  object-position: center;
+}
+
+.person-copy h2 {
+  margin-bottom: 28px;
+}
+
+.person-copy {
+  text-align: center;
+}
+
+.person-copy p {
+  margin: 0;
+}
+
+.person-copy .bio-break {
+  display: block;
+  height: 1lh;
+}
+
+.person-copy p + p {
+  margin-top: 40px;
+}
+
+footer {
+  padding: 24px 32px;
+  background: #123432;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .header-inner,
+  .about-main {
+    width: calc(100% - 40px);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .provider-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-sidebar {
+    position: static;
+    padding: 0 0 16px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .about-sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+
+  .about-sidebar a {
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .about-sidebar a:hover,
+  .about-sidebar a[aria-current="page"] {
+    border-bottom-color: var(--teal);
+    border-left-color: transparent;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner,
+  .about-main {
+    width: calc(100% - 36px);
+  }
+
+  .header-inner {
+    min-height: 72px;
+  }
+
+  .brand img {
+    width: 144px;
+  }
+
+  .back-home {
+    font-size: 13px;
+  }
+
+  .about-main {
+    padding: 48px 0 70px;
+  }
+
+  .page-heading {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  .person-row,
+  .person-row.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 27px 0;
+  }
+
+  .person-row.is-reversed .portrait-frame,
+  .person-row.is-reversed .person-copy {
+    order: initial;
+  }
+
+  .portrait-frame,
+  .person-row.is-reversed .portrait-frame {
+    justify-self: center;
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder</title>
+  <desc id="desc">A simple abstract portrait placeholder to replace with a therapist photo.</desc>
+  <rect width="800" height="600" fill="#dcebe3"/>
+  <circle cx="400" cy="245" r="104" fill="#ed795f" opacity=".9"/>
+  <path d="M194 600c18-134 94-213 206-213s188 79 206 213" fill="#25847d"/>
+  <path d="M317 249c0-55 37-96 83-96s83 41 83 96" fill="#173f3d" opacity=".14"/>
+  <text x="400" y="558" fill="#173f3d" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle">PORTRAIT PLACEHOLDER</text>
+</svg>

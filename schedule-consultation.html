@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Share information with Link Therapies to begin a consultation request."
+    />
+    <title>Schedule Consultation | Link Therapies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #173f3d;
+        --body: #405653;
+        --teal: #25847d;
+        --teal-dark: #176c67;
+        --mint: #e5f2ec;
+        --paper: #f7f8f3;
+        --white: #fff;
+        --coral: #ed795f;
+        --line: #dce6df;
+        --serif: "Fraunces", Georgia, serif;
+        --sans: "DM Sans", "Trebuchet MS", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--body);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid var(--coral);
+        outline-offset: 3px;
+      }
+
+      .site-header {
+        background: rgba(247, 248, 243, 0.96);
+        border-bottom: 1px solid rgba(23, 63, 61, 0.1);
+      }
+
+      .nav-wrap {
+        width: min(1120px, calc(100% - 48px));
+        min-height: 82px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand img {
+        display: block;
+        width: 170px;
+        height: auto;
+      }
+
+      .back-link {
+        color: var(--teal-dark);
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      main {
+        width: min(1040px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 64px 0 88px;
+      }
+
+      .page-intro {
+        max-width: 720px;
+        margin-bottom: 38px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--coral);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        color: var(--ink);
+        font-family: var(--serif);
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 48px;
+      }
+
+      .page-intro p:last-child {
+        max-width: 620px;
+        margin: 0;
+      }
+
+      .form-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        align-items: start;
+        gap: 50px;
+      }
+
+      form {
+        min-width: 0;
+      }
+
+      .form-section {
+        padding: 0 0 30px;
+        margin: 0 0 30px;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 20px;
+        font-size: 27px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 18px;
+      }
+
+      .field {
+        display: grid;
+        align-content: start;
+        gap: 7px;
+      }
+
+      .field-wide {
+        grid-column: 1 / -1;
+      }
+
+      label,
+      legend {
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .required-mark {
+        color: #ad4634;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      textarea {
+        width: 100%;
+        min-height: 48px;
+        padding: 10px 12px;
+        border: 1px solid #b9cbc2;
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--ink);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #71827d;
+        opacity: 1;
+      }
+
+      .form-section legend {
+        padding: 0;
+        margin-bottom: 16px;
+      }
+
+      .option-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+      }
+
+      .option {
+        display: inline-flex;
+        min-height: 32px;
+        align-items: center;
+        gap: 9px;
+        color: var(--body);
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .option input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        accent-color: var(--teal);
+      }
+
+      .help-text {
+        margin: 12px 0 0;
+        color: #596d67;
+        font-size: 13px;
+      }
+
+      .form-error {
+        margin: 12px 0 0;
+        color: #a2382a;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .form-error[hidden] {
+        display: none;
+      }
+
+      .privacy-note {
+        padding: 16px 18px;
+        margin: 0 0 22px;
+        border-left: 3px solid var(--coral);
+        background: #f1eee4;
+        font-size: 14px;
+      }
+
+      .submit-button {
+        min-height: 50px;
+        padding: 12px 22px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--teal);
+        color: var(--white);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          background 180ms ease,
+          transform 180ms ease;
+      }
+
+      .submit-button:hover {
+        transform: translateY(-2px);
+        background: var(--teal-dark);
+      }
+
+      .form-status {
+        min-height: 28px;
+        margin: 15px 0 0;
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .next-steps {
+        padding: 24px;
+        background: var(--mint);
+      }
+
+      .next-steps h2 {
+        font-size: 23px;
+      }
+
+      .next-steps p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 24px;
+        background: #123432;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          padding-top: 48px;
+        }
+
+        .form-layout {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .next-steps {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .nav-wrap,
+        main {
+          width: calc(100% - 36px);
+        }
+
+        .nav-wrap {
+          min-height: 72px;
+          gap: 12px;
+        }
+
+        .brand img {
+          width: 140px;
+        }
+
+        .back-link {
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+
+        .field-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .field-wide {
+          grid-column: auto;
+        }
+
+        .option-list {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html" aria-label="Link Therapies home">
+          <img src="images/link%20logo.png" alt="Link Therapies" />
+        </a>
+        <a class="back-link" href="index.html">Back to website</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-intro">
+        <p class="eyebrow">A first step toward care</p>
+        <h1>Schedule a Consultation</h1>
+        <p>
+          Share a little about your family and what support you are looking for.
+          We look forward to connecting with you.
+        </p>
+      </div>
+
+      <div class="form-layout">
+        <form id="consultation-form">
+          <fieldset class="form-section">
+            <legend>Services and availability</legend>
+            <div class="field-grid">
+              <fieldset
+                class="field field-wide"
+                style="border: 0; padding: 0; margin: 0"
+              >
+                <legend>
+                  What service are you interested in?
+                  <span class="required-mark">*</span>
+                </legend>
+                <div class="option-list">
+                  <label class="option"
+                    ><input type="checkbox" name="services" value="ABA" />
+                    ABA</label
+                  >
+                  <label class="option"
+                    ><input
+                      type="checkbox"
+                      name="services"
+                      value="Speech therapy"
+                    />
+                    Speech therapy</label
+                  >
+                  <label class="option"
+                    ><input
+                      type="checkbox"
+                      name="services"
+                      value="Occupational therapy"
+                    />
+                    Occupational therapy</label
+                  >
+                </div>
+                <p
+                  class="form-error"
+                  id="services-error"
+                  aria-live="polite"
+                  hidden
+                >
+                  Select at least one service.
+                </p>
+              </fieldset>
+              <div class="field">
+                <label for="city"
+                  >What city do you live in?
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="city"
+                  name="city"
+                  type="text"
+                  autocomplete="address-level2"
+                  required
+                />
+              </div>
+              <fieldset
+                class="field field-wide"
+                style="border: 0; padding: 0; margin: 0"
+              >
+                <legend>
+                  What is your availability for services?
+                  <span class="required-mark">*</span>
+                </legend>
+                <div class="option-list">
+                  <label class="option"
+                    ><input
+                      type="checkbox"
+                      name="availability"
+                      value="Mornings (8am-12pm)"
+                    />
+                    Mornings (8am-12pm)</label
+                  >
+                  <label class="option"
+                    ><input
+                      type="checkbox"
+                      name="availability"
+                      value="Mid-day (12-3pm)"
+                    />
+                    Mid-day (12-3pm)</label
+                  >
+                  <label class="option"
+                    ><input
+                      type="checkbox"
+                      name="availability"
+                      value="Afternoon/evening (3-6pm)"
+                    />
+                    Afternoon/evening (3-6pm)</label
+                  >
+                </div>
+                <p
+                  class="form-error"
+                  id="availability-error"
+                  aria-live="polite"
+                  hidden
+                >
+                  Select at least one availability window.
+                </p>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Patient and parent/guardian</legend>
+            <div class="field-grid">
+              <div class="field">
+                <label for="patient-first-name"
+                  >Patient first name
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="patient-first-name"
+                  name="patientFirstName"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="patient-last-name"
+                  >Patient last name <span class="required-mark">*</span></label
+                >
+                <input
+                  id="patient-last-name"
+                  name="patientLastName"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="date-of-birth"
+                  >Patient date of birth
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="date-of-birth"
+                  name="dateOfBirth"
+                  type="date"
+                  autocomplete="bday"
+                  required
+                />
+              </div>
+              <div class="field"></div>
+              <div class="field">
+                <label for="guardian-first-name"
+                  >Parent/Guardian first name
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="guardian-first-name"
+                  name="guardianFirstName"
+                  type="text"
+                  autocomplete="section-guardian given-name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="guardian-last-name"
+                  >Parent/Guardian last name
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="guardian-last-name"
+                  name="guardianLastName"
+                  type="text"
+                  autocomplete="section-guardian family-name"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Contact information</legend>
+            <div class="field-grid">
+              <div class="field">
+                <label for="phone"
+                  >Phone number <span class="required-mark">*</span></label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="email"
+                  >Email <span class="required-mark">*</span></label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <fieldset
+                class="field field-wide"
+                style="border: 0; padding: 0; margin: 0"
+              >
+                <legend>
+                  Preferred method of contact
+                  <span class="required-mark">*</span>
+                </legend>
+                <div class="option-list">
+                  <label class="option"
+                    ><input
+                      type="radio"
+                      name="preferredContact"
+                      value="Phone"
+                      required
+                    />
+                    Phone</label
+                  >
+                  <label class="option"
+                    ><input
+                      type="radio"
+                      name="preferredContact"
+                      value="Email"
+                    />
+                    Email</label
+                  >
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>More about your needs</legend>
+            <div class="field-grid">
+              <div class="field field-wide">
+                <label for="concerns"
+                  >Please share a short description of your concerns and why you
+                  are seeking services
+                  <span class="required-mark">*</span></label
+                >
+                <textarea id="concerns" name="concerns" required></textarea>
+              </div>
+              <div class="field field-wide">
+                <label for="insurance-provider"
+                  >Who is your insurance provider?
+                  <span class="required-mark">*</span></label
+                >
+                <input
+                  id="insurance-provider"
+                  name="insuranceProvider"
+                  type="text"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="privacy-note">
+            This form is a preview and does not send or store your information.
+            Please do not enter private medical details until a secure
+            submission method is connected.
+          </p>
+          <button class="submit-button" type="submit">
+            Submit Consultation Request
+          </button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+
+        <aside class="next-steps">
+          <h2>What happens next?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace
+            this with a short note about how your team follows up with families.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Link Therapies. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const form = document.querySelector("#consultation-form");
+      const formStatus = document.querySelector("#form-status");
+
+      function validateCheckboxGroup(name, errorId) {
+        const options = [...form.querySelectorAll(`input[name="${name}"]`)];
+        const isSelected = options.some((option) => option.checked);
+        const error = document.querySelector(`#${errorId}`);
+
+        error.hidden = isSelected;
+        options[0].setCustomValidity(isSelected ? "" : error.textContent);
+        return isSelected;
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formStatus.textContent = "";
+
+        const servicesValid = validateCheckboxGroup(
+          "services",
+          "services-error",
+        );
+        const availabilityValid = validateCheckboxGroup(
+          "availability",
+          "availability-error",
+        );
+
+        if (!servicesValid || !availabilityValid || !form.reportValidity()) {
+          return;
+        }
+
+        formStatus.textContent =
+          "Your information has not been sent. This preview is not connected to a secure submission service yet.";
+      });
+    </script>
+  </body>
+</html>
