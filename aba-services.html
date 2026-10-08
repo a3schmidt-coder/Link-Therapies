@@ -35,12 +35,35 @@
         </p>
       </div>
       <div class="about-layout">
-        <aside class="about-sidebar" aria-label="Therapy services">
-          <h2>Services</h2>
-          <nav aria-label="Service navigation">
-            <a href="speech-services.html">Speech Therapy</a>
-            <a href="ot-services.html">Occupational Therapy</a>
-            <a href="aba-services.html" aria-current="page">ABA Therapy</a>
+        <aside
+          class="about-sidebar explore-sidebar"
+          aria-label="Site navigation"
+        >
+          <h2>Explore</h2>
+          <nav aria-label="Main sections">
+            <details>
+              <summary>About Us</summary>
+              <div class="sidebar-subnav">
+                <a href="our-mission.html">Our Mission</a>
+                <a href="speech-team.html">Speech Team</a>
+                <a href="ot-team.html">OT Team</a>
+                <a href="aba-team.html">ABA Team</a>
+              </div>
+            </details>
+            <details open>
+              <summary>Services</summary>
+              <div class="sidebar-subnav">
+                <a href="speech-services.html">Speech Therapy</a>
+                <a href="ot-services.html">Occupational Therapy</a>
+                <span class="sidebar-current" aria-current="page"
+                  >ABA Therapy</span
+                >
+              </div>
+            </details>
+            <a href="insurance.html">Insurance</a>
+            <a href="careers.html">Careers</a>
+            <a href="resources.html">Resources</a>
+            <a href="#contact">Contact</a>
           </nav>
         </aside>
         <div class="page-content">
@@ -69,6 +92,61 @@
           </section>
         </div>
       </div>
+      <section class="site-contact" id="contact">
+        <div class="section-inner contact-grid">
+          <div>
+            <p class="eyebrow">We are here to help</p>
+            <h2>Contact</h2>
+            <p>
+              Have a question or want to learn more? Don't hesitate to reach out
+              to our team.
+            </p>
+            <a class="button" href="schedule-consultation.html"
+              >Fill out interest form</a
+            >
+          </div>
+          <div class="contact-details">
+            <p><strong>Phone</strong>(925) 232-1043</p>
+            <p><strong>Email</strong>admin@linktherapies.com</p>
+            <p>
+              <strong>Location</strong>2 Crow Canyon Court, Suite 110<br />San
+              Ramon, CA 94583
+            </p>
+            <div class="social-group">
+              <strong>Follow us</strong>
+              <nav
+                class="social-links"
+                aria-label="Link Therapies social media"
+              >
+                <a
+                  href="https://www.instagram.com/linktherapies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Link Therapies on Instagram, @linktherapies"
+                  title="Instagram @linktherapies"
+                  ><img src="images/instagram.jpg" alt=""
+                /></a>
+                <a
+                  href="https://www.facebook.com/linktherapies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Link Therapies on Facebook"
+                  title="Facebook"
+                  ><img src="images/facebook.jpg" alt=""
+                /></a>
+                <a
+                  href="https://www.linkedin.com/company/link-therapies"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Link Therapies on LinkedIn"
+                  title="LinkedIn"
+                  ><img src="images/linkedin.jpg" alt=""
+                /></a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer><p>&copy; 2026 Link Therapies. All rights reserved.</p></footer>
   </body>
