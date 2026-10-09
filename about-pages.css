@@ -435,6 +435,10 @@ h3 {
   object-fit: contain;
 }
 
+.provider-logos img.logo-zoom {
+  height: 94.5px;
+}
+
 .team-roster {
   display: grid;
   gap: 0;
@@ -514,6 +518,12 @@ footer p {
 @media (max-width: 980px) {
   .site-contact .contact-grid {
     gap: 42px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .provider-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

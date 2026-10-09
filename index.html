@@ -433,6 +433,10 @@
         object-fit: contain;
       }
 
+      .insurance-logos img.logo-zoom {
+        height: 94.5px;
+      }
+
       .insurance-grid > .text-link {
         grid-column: 1 / -1;
         justify-self: start;
@@ -592,6 +596,10 @@
         .insurance-grid,
         .contact-grid {
           gap: 42px;
+        }
+
+        .insurance-logos {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
@@ -899,10 +907,20 @@
               />
             </li>
             <li>
-              <img src="images/evernorth.jpg" alt="Evernorth" loading="lazy" />
+              <img
+                class="logo-zoom"
+                src="images/evernorth.jpg"
+                alt="Evernorth"
+                loading="lazy"
+              />
             </li>
             <li>
-              <img src="images/medicare.jpg" alt="Medicare" loading="lazy" />
+              <img
+                class="logo-zoom"
+                src="images/medicare.jpg"
+                alt="Medicare"
+                loading="lazy"
+              />
             </li>
             <li>
               <img
